@@ -1,0 +1,5 @@
+ext {
+    libraryVersions = [:]
+}
+
+libraryVersions.junit = "5.7.0"

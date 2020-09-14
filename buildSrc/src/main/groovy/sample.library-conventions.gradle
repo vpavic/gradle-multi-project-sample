@@ -1,0 +1,5 @@
+plugins {
+    id("sample.java-conventions")
+    id("java-library")
+    id("maven-publish")
+}

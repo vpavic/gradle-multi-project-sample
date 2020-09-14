@@ -1,0 +1,10 @@
+plugins {
+    id("sample.library-conventions")
+}
+
+dependencies {
+    implementation(project(":internal-module"))
+
+    testImplementation(platform("org.junit:junit-bom:$libraryVersions.junit"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+}

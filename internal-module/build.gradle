@@ -1,0 +1,8 @@
+plugins {
+    id("sample.java-conventions")
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:$libraryVersions.junit"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+}
