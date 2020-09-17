@@ -1,4 +1,0 @@
-// TODO improve by applying script plugin in sample.java-conventions
-subprojects {
-    apply(from: "$rootDir/gradle/dependency-versions.gradle")
-}

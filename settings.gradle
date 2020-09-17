@@ -1,5 +1,6 @@
 rootProject.name = "gradle-multi-project-sample"
 
 include("internal-module")
+include("internal-platform")
 include("library-a")
 include("library-b")

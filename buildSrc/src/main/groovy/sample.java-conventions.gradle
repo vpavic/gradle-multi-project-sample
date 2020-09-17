@@ -3,14 +3,24 @@ plugins {
     id("checkstyle")
 }
 
-// TODO applying script plugin here results in the following error:
-// An exception occurred applying plugin request [id: 'sample.java-conventions']
-// > Failed to apply plugin 'sample.java-conventions'.
-//    > org.gradle.internal.service.UnknownServiceException: No service of type ClassLoaderScope available in ProjectScopeServices.
-//apply(from: "$rootDir/gradle/dependency-versions.gradle")
+configurations {
+    internal {
+        visible = false
+        canBeConsumed = false
+        canBeResolved = false
+    }
+    compileClasspath.extendsFrom(internal)
+    runtimeClasspath.extendsFrom(internal)
+    testCompileClasspath.extendsFrom(internal)
+    testRuntimeClasspath.extendsFrom(internal)
+}
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    internal(platform(project(":internal-platform")))
 }
 
 java {
