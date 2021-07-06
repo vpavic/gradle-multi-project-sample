@@ -3,6 +3,12 @@ plugins {
     id("checkstyle")
 }
 
+java {
+    toolchain {
+        version = JavaLanguageVersion.of(11)
+    }
+}
+
 configurations {
     internal {
         visible = false
@@ -23,10 +29,6 @@ dependencies {
     internal(platform(project(":internal-platform")))
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-}
-
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
 }
