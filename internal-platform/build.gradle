@@ -2,10 +2,8 @@ plugins {
     id("java-platform")
 }
 
-apply(from: "$rootDir/gradle/dependency-versions.gradle")
-
 dependencies {
-    api(platform("org.junit:junit-bom:$libraryVersions.junit"))
+    api(platform(libs.junit.bom))
 }
 
 javaPlatform {
